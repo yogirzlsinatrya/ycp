@@ -14,3 +14,30 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get(
+    'pt', 
+    array(
+            'uses' => 'PascalTriangleController@fresh_pascal_triangle', 
+            'as' => 'fresh-pascal-triangle'
+        )
+    );
+
+
+Route::get(
+        'pascal-triangle', 
+        array(
+                'uses' => 'PascalTriangleController@index', 
+                'as' => 'view-pascal-triangle'
+            )
+        );
+
+
+Route::post(
+    'post-pascal-triangle', 
+    array(
+            'uses' => 'PascalTriangleController@store', 
+            'as' => 'post-pascal-triangle'
+        )
+    );
